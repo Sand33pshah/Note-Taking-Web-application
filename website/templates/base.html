@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='contact.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='form.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='background.css')}}">
+
+        <title>{% block title %}Base{% endblock %}</title>
+    </head>
+    <body>
+        <header class="header">
+            <h2>HELLO NOTES</h2>
+            <div class="navigation">
+                <ul class="lists">
+                    {% if user.is_authenticated %}
+                    <li><a id="home" href="/">Home</a></li>
+                    <li><a id="contact" href="/contacts">Contact</a></li>
+                    <li><a id="logout" href="/logout">Logout</a></li>
+                    {% else %}
+                    <li><a id="login" href="/login">Login</a></li>
+                    <li><a id="signup" href="/signup">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </header>
+        {% with messages = get_flashed_messages(with_categories=true)%}
+        {% if messages %}
+            {% for category,message in messages %}
+                {% if category == 'error' %}
+                    <div role="alert">
+                        {{ message }}
+                        <button type="button" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% else %}
+                    <div role="success">
+                        {{ message }}
+                        <button type="button" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block container %}{% endblock %}
+        <!-- <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}" ></script> -->
+        {% block javascript %}
+            <script type="text/javascript">
+            function deleteNote(noteId) {
+                fetch("/delete-note", {
+                    method: "POST",
+                    body: JSON.stringify({ noteId: noteId }),
+                }).then((_res) => {
+                    window.location.href = "/";
+                });
+                }
+            </script>
+        {% endblock %}
+    </body>
+</html>

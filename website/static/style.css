@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background-color: #f37777;
+    
+}
+.header{
+    background: #339999;
+    display: flex;
+    margin: auto;
+    height: 7vh;
+    padding: 20px 30px 20px 30px;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.header h2{
+    font-family: cursive;
+    cursor: pointer;
+    color: white;
+}
+.lists li{
+    display: inline-block;
+    margin: 5rem; 
+}
+.lists li a{
+   text-decoration: none;
+   font-size: large;
+   color: rgb(255, 255, 255);
+   margin: auto;
+   text-shadow: 5px 5px 5px rgb(77, 75, 75);
+   cursor: pointer;
+}
+/* .intro{
+    width: 100vh;
+    padding: 20px;
+    margin: 37vh 0 0 27vh;
+}
+.intro h1{
+    font-size: 50px;
+    color: chartreuse;
+    font-family: cursive;
+} */
+.notes{
+    margin-top: 5vh;
+    color: white;
+    text-shadow: 10px 7px 10px black;
+}
+.view_notes{
+    background-color: white;
+    min-width: 75vh;
+    max-width: 85vh;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin: 10vh 40vh 0 55vh;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 10px 5px 2px rgb(54, 54, 54);
+
+}
+.list_notes{
+    list-style-type: none;
+    background-color: #00ffff;
+    margin-bottom: 5px;
+    padding: 5px 50px 5px 50px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    max-width: 500px;
+}
+.close{
+    margin-left: 50px;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+}
+.message{
+    margin-top: 5vh;
+    margin-left: 20vh;
+    color: white;
+
+}
+
+

@@ -1,0 +1,57 @@
+.introduction{
+    padding: 50px;
+    background: transparent;
+    height: 20%;
+    width: 60%;
+    margin: 15vh 0 0 23vh;
+    border-radius: 15px;
+    color: white;
+    
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+    padding-top: 10vh;
+    color: white;
+
+}
+.skills, .Education, .Project{
+    height: 340px;
+    width: 300px;
+    padding: 37px;
+    border-radius: 15px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 10px 10px 0 rgb(43, 42, 42);
+    
+}
+.skills{
+    background: lightskyblue;
+}
+.Education{
+    background: lightsalmon;
+    text-decoration: none;
+}
+.Project{
+    background: lightgreen;
+}
+.div_social_media{
+    margin-top: 25px;
+    background-color: rgb(116, 49, 49);
+    padding: 20px 50px 20px 50px;
+    color: white;
+}
+.social_media{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+
+    
+}
+.social_media li a{
+    text-decoration: none;
+    color: white;
+}
